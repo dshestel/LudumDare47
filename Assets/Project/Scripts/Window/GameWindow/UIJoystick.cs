@@ -39,7 +39,12 @@ namespace PotionOfLoop.UI
 			private set;
         }
 
-		void Start()
+		private void Awake()
+        {
+			Instance = this;
+        }
+
+		private void Start()
 		{
 			_halfScreenWidth = Screen.width / 2;
 			_halfScreenHeight = Screen.height / 2;
@@ -50,7 +55,7 @@ namespace PotionOfLoop.UI
 			centerPos = _transfrorm.anchoredPosition;
 		}
 
-		void SetHAndF(Vector2 pos)
+		private void SetHAndF(Vector2 pos)
 		{ 
 			Vector2 diff = pos - centerPos;
 			float distance = diff.magnitude;
@@ -58,8 +63,6 @@ namespace PotionOfLoop.UI
 			if (distance > _r)
 			{
 				pos = centerPos + diff / distance * _r;
-
-				Debug.Log(pos);
 			}
 
 			_transfrorm.anchoredPosition = pos;

@@ -1,90 +1,74 @@
-﻿using UnityEngine;
-using PotionOfLoop.UI;
-using System.Collections.Generic;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace PotionOfLoop
 {
     public class Attacker : MonoBehaviour
     {
-		private int _damage = 1;
-		private float _range = 2f;
-		private float _shotDelay = 0.1f;
+        [SerializeField]
+        private int _damage = 1;
+        [SerializeField]
+        private float _range = 2f;
+        [SerializeField]
+        private float _shotDelay = 0.4f;
 
-		private float _nextShotTime = 0f;
+        [SerializeField]
+        private Transform _rotateRoot = null;
 
-        private Enemy _enemy = null;
+        private float _animLength = 0.4f;
+        private float _nextShotTime = 0f;
 
-		public void Setup(int damage, float range, float shotDelay)
+        protected DamagableUnit _target = null;
+
+        public bool InRange
         {
-			_damage = damage;
-			_range = range;
-			_shotDelay = shotDelay;
-		}
+            get => !ReferenceEquals(_target, null) && Vector3.Distance(transform.position, _target.transform.position) < _range;
+        }
+
+        public bool CanAttack
+        {
+            get => _nextShotTime < Time.time && InRange;
+        }
+
+        public void Setup(int damage, float range, float shotDelay)
+        {
+            _damage = damage;
+            _range = range;
+            _shotDelay = shotDelay;
+        }
 
         private void Update()
         {
-			if (Time.time > _nextShotTime)
-			{
-				if (UIJoystick.Instance != null)
-				{
-					if (!UIJoystick.Instance.IsDragging)
-					{
-                        TryShot();
-                    }
-				}
-			}
-        }
-
-		private void TryShot()
-        {
-			var enemies = LevelManager.Instance.Enemies;
-
-            _enemy = GetNearestEnemy(enemies, transform.position);
-
-            if (_enemy != null)
+            if (CanAttack)
             {
-                if (Vector3.Distance(_enemy.transform.position, transform.position) <= _range)
-                {
-                    Shot();
-                }
+                TryShot();
             }
         }
 
-        private void Shot()
+        protected virtual void TryShot()
+        {
+            
+        }
+
+        protected virtual void Shot()
         {
             _nextShotTime = Time.time + _shotDelay;
 
-            _enemy.TakeDamage(_damage);
+            StartCoroutine(ShotCor());
         }
 
-        private Enemy GetNearestEnemy(List<Enemy> enemies, Vector3 origin)
+        private IEnumerator ShotCor()
         {
-			int length = enemies.Count;
+            var endAnimationTime = Time.time + _animLength;
 
-            if (length == 0)
+            while (Time.time < endAnimationTime)
             {
-                return null;
+                _rotateRoot.LookAt(_target.transform, Vector3.up);
+
+                yield return null;
             }
 
-            Enemy nearest = null;
-            float distance = float.MaxValue;
-            for (int i = length - 1; i >= 0; i--)
-            {
-                var targetable = enemies[i];
-                if (targetable == null || targetable.IsDead)
-                {
-                    enemies.RemoveAt(i);
-                    continue;
-                }
-                float currentDistance = (origin - targetable.transform.position).sqrMagnitude;
-                if (currentDistance < distance)
-                {
-                    distance = currentDistance;
-                    nearest = targetable;
-                }
-            }
-
-            return nearest;
+            _target.TakeDamage(_damage);
         }
     }
 }
