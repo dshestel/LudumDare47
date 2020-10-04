@@ -16,7 +16,7 @@ namespace PotionOfLoop
         {
             if (other.GetComponent<Player>() != null)
             {
-                //new Reward(new RewardItem[] { new RewardItem(componentType: _componentType, 1) });
+                new Reward(new RewardItem[] { new RewardItem(componentType: _componentType, count: 1) });
             }
         }
     }

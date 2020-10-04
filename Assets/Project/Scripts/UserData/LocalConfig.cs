@@ -23,6 +23,8 @@ namespace PotionOfLoop
             set => PlayerPrefs.SetInt(Keys.CoinCurrency, value);
         }
 
+
+
         //public static void SetMaterialTypeProgress(MaterialType type, int value)
         //{
         //    PlayerPrefs.SetInt(string.Format(Keys.ProgressByMaterialType, type.ToString()), value);

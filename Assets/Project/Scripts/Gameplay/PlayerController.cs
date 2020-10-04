@@ -11,26 +11,25 @@ namespace PotionOfLoop
 		[SerializeField]
 		private Animator _playerAnimator = null;
 
+		[SerializeField]
+		private Transform _rotateRoot = null;
+
 		void Update()
 		{
 			if (UIJoystick.Instance != null)
 			{
 				if (UIJoystick.Instance.IsDragging)
 				{
+					_playerAnimator.SetBool("IsRunning", true);
+
 					transform.Translate(new Vector3(UIJoystick.Instance.H, 0f, UIJoystick.Instance.V) * speed * Time.deltaTime);
 
-					transform.LookAt(transform.position + new Vector3(UIJoystick.Instance.H, 0f, UIJoystick.Instance.V));
-
+					_rotateRoot.LookAt(transform.position + new Vector3(UIJoystick.Instance.H, 0f, UIJoystick.Instance.V));
 				}
-				else
-				{
-
+                else
+                {
+					_playerAnimator.SetBool("IsRunning", false);
 				}
-
-				//if (JoystickFire.instance.Fire)
-				//{
-				//	Debug.Log("fire");
-				//}
 			}
 		}
 	}

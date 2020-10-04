@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3633456746158099467}
   - component: {fileID: 3633456746158099464}
   - component: {fileID: 3125841006557744151}
-  - component: {fileID: 2225479803897255820}
+  - component: {fileID: 5616936590091228374}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   _playerAnimator: {fileID: 4187991086335019110}
+  _rotateRoot: {fileID: 8469885807700427839}
 --- !u!114 &3125841006557744151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e563a01a71549f595d97efa3faa4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2225479803897255820
+  _currentHp: 0
+--- !u!114 &5616936590091228374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,9 +71,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3633456746158099465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc2cfa32f8334a14a79e31233283aca, type: 3}
+  m_Script: {fileID: 11500000, guid: 23f38d4593a9e46af8a15801f1f81c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 1
+  _range: 2
+  _shotDelay: 0.4
+  _rotateRoot: {fileID: 8469885807700427839}
 --- !u!1001 &3633456746080278897
 PrefabInstance:
   m_ObjectHideFlags: 0

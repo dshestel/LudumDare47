@@ -8,6 +8,8 @@ namespace PotionOfLoop
         public static Action<DamagableUnit> Died = delegate { };
 
         protected int _health = 0;
+
+        [SerializeField]
         protected int _currentHp = 0;
 
         public bool IsDead
