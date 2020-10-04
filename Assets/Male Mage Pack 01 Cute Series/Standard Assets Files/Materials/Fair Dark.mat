@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fair Dark
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _SPECULARHIGHLIGHTS_OFF
+  m_Shader: {fileID: 4800000, guid: 2844636321e1adf4684198d916da44ca, type: 3}
+  m_ShaderKeywords: _SPECULARHIGHLIGHTS_OFF _USERIM_ON _USESHADOW_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -47,6 +47,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -55,7 +59,36 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RimTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShadowTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureDiffuse:
+        m_Texture: {fileID: 2800000, guid: 4f5dd95fcef233242988b4f8407c5312, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AttenuationPower: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -63,15 +96,60 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _GradientPosition: 0
+    - _GradientRotation: 0
+    - _GradientSize: 0
     - _Metallic: 0
     - _Mode: 0
+    - _NoiseTextureScale: 2
+    - _NormalStrength: 1
     - _OcclusionStrength: 1
+    - _OutlineSize: 0.1
     - _Parallax: 0.02
+    - _PowerColor1: 1
+    - _PowerColor2: 1
+    - _RimBlend: 0.5
+    - _RimLightColor: 0
+    - _RimLightIntensity: 0
+    - _RimSize: 0.403
+    - _RimTextureRotation: 0
+    - _RimTextureTiling: 0
+    - _RimTextureViewProjection: 0
+    - _ShadowBlend: 0.254
+    - _ShadowSize: 1.396
+    - _ShadowTextureRotation: 0
+    - _ShadowTextureTiling: 0
+    - _ShadowTextureViewProjection: 0
     - _SmoothnessTextureChannel: 0
+    - _SpecLightColor: 0
+    - _SpecularBlend: 0
     - _SpecularHighlights: 0
+    - _SpecularLightIntensity: 1
+    - _SpecularSize: 0.005
+    - _SpecularTextureRotation: 0
+    - _SpecularTextureTiling: 0
+    - _SpecularTextureViewProjection: 0
+    - _Speed: 0
     - _SrcBlend: 1
     - _UVSec: 0
+    - _UseGradient: 0
+    - _UseNormalMap: 0
+    - _UseOutline: 0
+    - _UseOutlineFire: 0
+    - _UseRim: 1
+    - _UseShadow: 1
+    - _UseSpecular: 0
     - _ZWrite: 1
+    - __dirty: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorA: {r: 1, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 0, g: 0.1264467, b: 1, a: 0}
+    - _DiffuseColor: {r: 0.37855998, g: 0.38004008, b: 0.4433962, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _OutlineColor1: {r: 0, g: 0.9740796, b: 1, a: 0}
+    - _OutlineColor2: {r: 1, g: 0.06464233, b: 0, a: 0}
+    - _RimColor: {r: 1, g: 0.8820755, b: 0.99147606, a: 0}
+    - _ShadowColor: {r: 1, g: 0.50980395, b: 0.7813688, a: 1}
+    - _SpecularColor: {r: 1, g: 0.9575656, b: 0.75, a: 0}
