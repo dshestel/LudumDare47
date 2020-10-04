@@ -42,9 +42,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c2278812ba9590b478992e608119284b, type: 3}
 --- !u!64 &4548812219594890081
 MeshCollider:
@@ -56,9 +56,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 65e104f3f1b4840489c929965fe07ab9, type: 3}
 --- !u!1001 &4548812219396271197
 PrefabInstance:
@@ -118,7 +118,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: c2278812ba9590b478992e608119284b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d08a0d1aba6bbce4b815d4bd76548e32, type: 2}
+      objectReference: {fileID: 2100000, guid: 34efce60d118cd24fbb987b8529e819a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2278812ba9590b478992e608119284b, type: 3}
 --- !u!1 &4548812219396369149 stripped
@@ -191,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 65e104f3f1b4840489c929965fe07ab9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d08a0d1aba6bbce4b815d4bd76548e32, type: 2}
+      objectReference: {fileID: 2100000, guid: 34efce60d118cd24fbb987b8529e819a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e104f3f1b4840489c929965fe07ab9, type: 3}
 --- !u!1 &4548812219594923458 stripped
